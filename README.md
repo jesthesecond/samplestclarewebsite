@@ -925,6 +925,46 @@
             min-height: 600px;
         }
     }
+	
+ .poster-carousel-section {
+        padding: 60px 0;
+        background: var(--white);
+    }
+    
+    .poster-item {
+        background: var(--white);
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        margin: 0 15px;
+        transition: all 0.3s ease;
+    }
+    
+    .poster-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+    
+    .poster-img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-bottom: 3px solid var(--secondary);
+    }
+    
+    .poster-caption {
+        padding: 15px;
+        text-align: center;
+        font-weight: 600;
+        color: var(--dark);
+        background: var(--white);
+    }
+    
+    /* Responsive settings for the carousel */
+    @media (max-width: 768px) {
+        .poster-carousel-section {
+            padding: 40px 0;
+        }
     </style>
 </head>
 <body>
@@ -1078,6 +1118,33 @@
             </div>
         </div>
     </section>
+	
+<section class="poster-carousel-section">
+    <div class="container">
+        <h2 class="section-title">School Posters</h2>
+        <div class="poster-carousel owl-carousel owl-theme">
+            <!-- Poster 1 -->
+            <div class="poster-item">
+                <img src="https://i.ibb.co/9HvL1F0k/UPDATED-TARPAULIN-3600x2880-2.png" alt="School Event Poster" class="poster-img">
+                <div class="poster-caption">Annual Science Fair 2023</div>
+            </div>
+            
+            <!-- Poster 2 -->
+            <div class="poster-item">
+                <img src="https://i.ibb.co/7NLwvm8D/UPDATED-TARPAULIN-3600x2880-3.png" alt="School Event Poster" class="poster-img">
+                <div class="poster-caption">Sports Day Announcement</div>
+            </div>
+            
+            <!-- Poster 3 -->
+            <div class="poster-item">
+                <img src="https://i.ibb.co/9HvL1F0k/UPDATED-TARPAULIN-3600x2880-2.png" alt="School Event Poster" class="poster-img">
+                <div class="poster-caption">Parent-Teacher Meeting</div>
+            </div>
+            
+            <!-- Add more posters as needed -->
+        </div>
+    </div>
+</section>
     
    <!-- Facebook Embed Section -->
    
@@ -1201,6 +1268,9 @@
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About Us</a></li>
                         <li><a href="#programs">
+						
+						
+
 						    <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
@@ -1237,6 +1307,29 @@
             });
         });
     </script>
+	<script>
+    $(document).ready(function(){
+        $(".poster-carousel").owlCarousel({
+            loop: true,
+            margin: 20,
+            nav: true,
+            dots: false,
+            autoplay: true,
+            autoplayTimeout: 5000,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 2
+                },
+                1000: {
+                    items: 3
+                }
+            }
+        });
+    });
+</script>
 	
 </body>
 </html>
